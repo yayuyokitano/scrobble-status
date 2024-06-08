@@ -1,0 +1,7 @@
+{
+  "client_id": "",
+  "client_secret": "",
+  "slack_redirect_uri": "https://localhost:7188/auth",
+  "ws_info_uri": "http://localhost:8564/webscrobbler",
+  "access_token": ""
+}
