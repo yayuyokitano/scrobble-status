@@ -3,5 +3,6 @@
   "client_secret": "",
   "slack_redirect_uri": "https://localhost:7188/auth",
   "ws_info_uri": "http://localhost:8564/webscrobbler",
+  "status_format_string": "%s「%s」（曲%d回目）",
   "access_token": ""
 }

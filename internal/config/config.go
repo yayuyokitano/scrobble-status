@@ -6,11 +6,12 @@ import (
 )
 
 type Config struct {
-	ClientID         string `json:"client_id"`
-	ClientSecret     string `json:"client_secret"`
-	SlackRedirectURI string `json:"slack_redirect_uri"`
-	WSInfoURI        string `json:"ws_info_uri"`
-	AccessToken      string `json:"access_token"`
+	ClientID           string `json:"client_id"`
+	ClientSecret       string `json:"client_secret"`
+	SlackRedirectURI   string `json:"slack_redirect_uri"`
+	WSInfoURI          string `json:"ws_info_uri"`
+	StatusFormatString string `json:"status_format_string"`
+	AccessToken        string `json:"access_token"`
 }
 
 func GetConfig() (conf Config, err error) {

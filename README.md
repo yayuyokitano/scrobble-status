@@ -24,3 +24,7 @@ This program will listen to Web Scrobbler events and automatically update your s
 Once everything is linked, listen to music in your browser [(websites supported by web scrobbler)](https://github.com/web-scrobbler/website-resources/blob/master/resources/connectors.json), and it should just work. Keep in mind that you might want to restart your browser to ensure everything is linked properly, but generally it should not be needed.
 
 Note that while you must have this program and web scrobbler running on the same machine, once you have authenticated slack you can move the config to another machine and it will still work.
+
+## Configurable status message
+
+In config.json, you can change `status_format_string` to specify format of the status. There is no pluralization, and string must be in the format of artist first, then track, then playcount. If you need something more customized, please edit `internal/webscrobbler/event.go`.

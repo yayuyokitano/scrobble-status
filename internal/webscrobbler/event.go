@@ -1,6 +1,10 @@
 package webscrobbler
 
-import "fmt"
+import (
+	"fmt"
+
+	"scrobble-status/internal/config"
+)
 
 type EventType string
 
@@ -71,10 +75,10 @@ func (s Song) getCurrentTime() int {
 	return s.Parsed.CurrentTime
 }
 
-func (s Song) getPlayCountString() string {
-	return fmt.Sprintf("%d回再生", s.Metadata.UserPlayCount)
-}
-
 func (s Song) getSlackStatus() string {
-	return fmt.Sprintf("%s「%s」（%s）", s.getArtist(), s.getTrack(), s.getPlayCountString())
+	conf, err := config.GetConfig()
+	if err != nil || conf.StatusFormatString == "" {
+		return fmt.Sprintf("%s「%s」（曲%d回目）", s.getArtist(), s.getTrack(), s.Metadata.UserPlayCount)
+	}
+	return fmt.Sprintf(conf.StatusFormatString, s.getArtist(), s.getTrack(), s.Metadata.UserPlayCount)
 }
