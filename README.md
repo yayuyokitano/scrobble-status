@@ -15,9 +15,10 @@ This program will listen to Web Scrobbler events and automatically update your s
 4. Rename `config.example.json` to `config.json`
 5. Download and install npm and nodejs from [here](https://nodejs.org/en)
 6. Run `npx local-ssl-proxy --source 7188 --target 8564` in terminal.
-7. Open terminal in this folder and run `make run`.
-8. On first launch, you will be taken to slack to authorize the application, please do so.
-9. Check your terminal to see the URL to link with Web Scrobbler.
+7. Install Go from [here](https://go.dev/doc/install)
+8. Open terminal in this folder and run `go run cmd/scrobble-status/main.go`.
+9. On first launch, you will be taken to slack to authorize the application, please do so.
+10. Check your terminal to see the URL to link with Web Scrobbler.
 
 Once everything is linked, listen to music in your browser [(websites supported by web scrobbler)](https://github.com/web-scrobbler/website-resources/blob/master/resources/connectors.json), and it should just work. Keep in mind that you might want to restart your browser to ensure everything is linked properly, but generally it should not be needed.
 
